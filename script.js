@@ -367,7 +367,9 @@ function bookCardHTML(b){
   const stars=Number(b.rating)>0?`${"★".repeat(Math.round(Number(b.rating)))} ${Number(b.rating).toFixed(1)}`:"Henüz puan yok";
   return `<article class="book-card" data-id="${b.id}">
     <button class="book-cover-wrap" data-action="open-book" aria-label="${esc(b.title)} detayını aç">
-      ${b.cover?`<img class="book-cover" src="${esc(b.cover)}" alt="${esc(b.title)} kapağı">`:""}<span class="cover-placeholder">BOOK</span>
+      ${b.cover
+        ? `<img class="book-cover" src="${esc(b.cover)}" alt="${esc(b.title)} kapağı">`
+        : `<span class="cover-placeholder">BOOK</span>`}
     </button>
     <div class="book-card-body"><div class="book-card-top"><span class="status-pill">${STATUS_LABELS[b.status]||"Kitap"}</span><button class="heart-btn ${b.favorite?"active":""}" data-action="favorite">${b.favorite?"♥":"♡"}</button></div><h3 class="book-title">${esc(b.title)}</h3><p class="book-author">${esc(b.author||"")}</p><div class="rating-line">${stars}</div></div>
   </article>`;
