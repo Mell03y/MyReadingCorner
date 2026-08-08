@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#c7808d" />
+  <title>My Reading Corner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Ana sayfa">
+        <span class="brand-mark">✿</span>
+        <span>
+          <strong>My Reading</strong>
+          <small>Corner</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#home" data-route="home">⌂ <span>Home</span></a>
+        <a href="#library" data-route="library">▥ <span>My Library</span></a>
+        <a href="#bookshelf" data-route="bookshelf">▤ <span>Bookshelf</span></a>
+        <a href="#tracker" data-route="tracker">◫ <span>Monthly Tracker</span></a>
+        <a href="#month-review" data-route="month-review">✎ <span>Month Review</span></a>
+        <a href="#best-book" data-route="best-book">♡ <span>Best Book</span></a>
+        <a href="#add-book" data-route="add-book">＋ <span>Add Book</span></a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="tape"></span>
+        <p>little pages,<br/>big memories ♡</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç/kapat">☰</button>
+        <div>
+          <p class="eyebrow">digital reading journal</p>
+          <h1 id="pageTitle">My Reading Corner</h1>
+        </div>
+        <div class="top-actions">
+          <button class="soft-btn" id="exportBtn" title="Verileri JSON olarak dışa aktar">Export</button>
+          <label class="soft-btn file-btn" title="Yedekten veri yükle">
+            Import
+            <input type="file" id="importInput" accept="application/json" />
+          </label>
+        </div>
+      </header>
+
+      <section id="app" class="page"></section>
+    </main>
+  </div>
+
+  <template id="bookCardTemplate">
+    <article class="book-card">
+      <button class="book-cover-wrap" data-action="open-book">
+        <img class="book-cover" alt="" />
+        <span class="cover-placeholder">BOOK</span>
+      </button>
+      <div class="book-card-body">
+        <div class="book-card-top">
+          <span class="status-pill"></span>
+          <button class="heart-btn" data-action="favorite" aria-label="Favori">♡</button>
+        </div>
+        <h3 class="book-title"></h3>
+        <p class="book-author"></p>
+        <div class="rating-line"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
