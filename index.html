@@ -38,15 +38,14 @@
       <header class="topbar">
         <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç/kapat">☰</button>
         <div>
-          <p class="eyebrow">digital reading journal</p>
+          <p class="eyebrow">digital reading journal · cloud synced</p>
           <h1 id="pageTitle">My Reading Corner</h1>
         </div>
         <div class="top-actions">
-          <button class="soft-btn" id="exportBtn" title="Verileri JSON olarak dışa aktar">Export</button>
-          <label class="soft-btn file-btn" title="Yedekten veri yükle">
-            Import
-            <input type="file" id="importInput" accept="application/json" />
-          </label>
+          <span class="cloud-chip" id="cloudChip">☁ synced</span>
+          <button class="soft-btn" id="exportBtn" title="Verilerinin JSON yedeğini al">Export</button>
+          <span class="account-email" id="accountEmail"></span>
+          <button class="soft-btn" id="logoutBtn">Çıkış</button>
         </div>
       </header>
 
@@ -54,24 +53,6 @@
     </main>
   </div>
 
-  <template id="bookCardTemplate">
-    <article class="book-card">
-      <button class="book-cover-wrap" data-action="open-book">
-        <img class="book-cover" alt="" />
-        <span class="cover-placeholder">BOOK</span>
-      </button>
-      <div class="book-card-body">
-        <div class="book-card-top">
-          <span class="status-pill"></span>
-          <button class="heart-btn" data-action="favorite" aria-label="Favori">♡</button>
-        </div>
-        <h3 class="book-title"></h3>
-        <p class="book-author"></p>
-        <div class="rating-line"></div>
-      </div>
-    </article>
-  </template>
-
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
